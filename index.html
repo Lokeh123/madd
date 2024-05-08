@@ -4,42 +4,27 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Offline-Online Webpage</title>
-<style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-  }
-
-  h1 {
-    color: #333;
-  }
-
-  p {
-    color: #666;
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>Offline-Online Webpage</h1>
 <p>This is a basic HTML page that works both online and offline.</p>
 
-<script>
-  console.log("Hello from script.js");
-</script>
+<script src="script.js"></script>
 
 <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('service-worker.js')
-        .then(registration => {
-          console.log('ServiceWorker registration successful');
-        })
-        .catch(error => {
-          console.log('ServiceWorker registration failed:', error);
-        });
-    });
-  }
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful');
+      })
+      .catch(error => {
+        console.log('ServiceWorker registration failed:', error);
+      });
+  });
+}
 </script>
 </body>
 </html>
+
